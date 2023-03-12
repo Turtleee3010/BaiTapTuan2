@@ -46,7 +46,7 @@ void PHANSO::NhapPhanSo()
 {
     cout << "\tNhap tu so: ";
     cin >> this->T;
-    do
+    do //Nhập mẫu sao cho mẫu khác 0
     {
         cout << "\tNhap mau so: ";
         cin >> this->M;
@@ -59,19 +59,6 @@ void PHANSO::NhapPhanSo()
         this->T = -this->T;
         this->M = -this->M;
     }
-}
-
-void SoSanh(PHANSO a, PHANSO b)
-{
-    float x, y;
-    x = float(a.T) / float(a.M);
-    y = float(b.T) / float(b.M);
-    if (x > y)
-        cout << "Phan so thu 1 lon hon phan so thu 2";
-    else if (x < y)
-        cout << "Phan so thu 2 lon hon phan so thu 1";
-    else
-        cout << "2 phan so bang nhau";
 }
 
 void PHANSO::XuatPhanSo()
@@ -93,7 +80,7 @@ PHANSO PHANSO::Rutgon()
     a = abs(ps.T);
     b = abs(ps.M);
 
-    if (a == 0) return ps;
+    if (a == 0) return ps; // nếu tử = 0 thì phân số đó = 0
     else
         while (a != b)
         {
