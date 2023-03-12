@@ -14,7 +14,7 @@ void PHANSO::NhapPhanSo()
 {
     cout << "\tNhap tu so: ";
     cin >> this->T;
-    do
+    do //Nhập mẫu số để mẫu khác 0
     {
         cout << "\tNhap mau so: ";
         cin >> this->M;
@@ -22,7 +22,7 @@ void PHANSO::NhapPhanSo()
             cout << "Khong hop le, vui long nhap lai: ";
     } while (this->M == 0);
 
-    if (this->M < 0)
+    if (this->M < 0) // Nếu mẫu âm thì đổi dấu tử mẫu
     {
         this->T = -this->T;
         this->M = -this->M;
@@ -32,8 +32,8 @@ void PHANSO::NhapPhanSo()
 void SoSanh(PHANSO a, PHANSO b)
 {
     float x, y;
-    x = float(a.T) / float(a.M);
-    y = float(b.T) / float(b.M);
+    x = float(a.T) / float(a.M); //tìm giá trị của phân số 1
+    y = float(b.T) / float(b.M); //tìm giá trị của phân số 2
      if (x > y) cout << "Phan so thu 1 lon hon phan so thu 2";
         else if (x < y) cout << "Phan so thu 2 lon hon phan so thu 1";
             else cout << "2 phan so bang nhau"; 
