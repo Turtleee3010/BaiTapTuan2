@@ -15,7 +15,7 @@ void PHANSO::NhapPhanSo()
 {
     cout << "Nhap tu so: ";
     cin >> this->T;
-    do
+    do // Nhập mẫu số sao cho mẫu không bằng 0
     {
         cout << "Nhap mau so: ";
         cin >> this->M;
@@ -23,7 +23,7 @@ void PHANSO::NhapPhanSo()
             cout << "Khong hop le, vui long nhap lai: ";
     } while (this->M == 0);
 
-    if (this->M < 0)
+    if (this->M < 0) // Nếu mẫu âm thì tử mẫu đổi dấu
     {
         this->T = -this->T;
         this->M = -this->M;
@@ -45,7 +45,7 @@ PHANSO PHANSO::Rutgon()
     PHANSO ps;
     ps.T = this->T;
     ps.M = this->M;
-    a = abs(ps.T);
+    a = abs(ps.T); // Làm tử mấu dương để tối giản phân số
     b = abs(ps.M);
 
     while (a != b)
